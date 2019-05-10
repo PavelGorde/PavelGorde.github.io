@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/remodal-default-theme.css" />
     <link rel="stylesheet" href="css/styling.css" />
 	<script src='scripts.js'></script>
-	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
 	
     <!-- //Rating@Mail.ru counter -->
 </head>
@@ -422,28 +422,23 @@
 
 </body>
 
-<script type="text/javascript">
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+		<script type="text/javascript">
     (function(){
        emailjs.init("user_ETm5GTWdshE7jz5yAalPx");
     })();
 </script>
 <script type="text/javascript">
-var form = document.getElementById('contact-form');
-var modal = document.getElementById('contact-form2');
-modal.style.display = "none";
-var downloadLabel = document.getElementById('download-label');
     window.onload = function() {
         document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            modal.style.display = "block";
-            form.style.display = "none";
-            downloadLabel.innerText = "Спасибо, ожидайте звонка менеджера !";
             event.preventDefault();
             this.contact_number.value = Math.random() * 100000 | 0;
             emailjs.sendForm('gmail', 'template_OKTssLMW', this);
             window.location = 'https://www.multiplyconsultinggroup.com/';
+
         });
     }
+	
 </script>
 
 </html>
